@@ -1,0 +1,16 @@
+services:
+  dnstap:
+    image: edgd1er/dnstap
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "6000:6000"
+    command: [ "/bin/dnstap","-l","0.0.0.0:6000","-q","-w","/var/log/dnstap/dnstap.log" ]
+    environment:
+      TZ: "Europe/Paris"
+    volumes:
+      - dnstapvol:/var/log/dnstap/
+
+volumes:
+  dnstapvol:
