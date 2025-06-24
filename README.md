@@ -2,6 +2,7 @@
 
 very simple dnstap listener based on alpine + github.com/dnstap/golang-dnstap/dnstap@latest
 
+
 ## Build
 ```bash
 docker compose build --progress plain --no-cache
@@ -76,3 +77,18 @@ dnstap  | 14:23:41.857291 CQ 192.168.0.250 UDP 52b "min.zet.com." IN A
 dnstap  | 14:23:42.373987 CR 192.168.0.250 UDP 99b "min.zet.biz." IN A
 dnstap  | 14:48:53.621237 CQ 87.121.0.128 UDP 42b "aaa.hmdns.top." IN TXT
 ```
+
+## For complex usecases or requirements:
+
+Another dnstap project [DNS-Collector](https://github.com/dmachard/DNS-collector) may have more sophisticated options. 
+
+__From its readme:__
+
+DNS-collector is a lightweight tool that captures DNS queries and responses from your DNS servers, processes them intelligently, and sends clean data to your monitoring or analytics systems.
+
+What it does:
+
+    Captures DNS data from your DNS servers (BIND, PowerDNS, Unbound, etc.) via DNStap protocol or live network capture
+    Filters out noise like health checks, internal queries, or spam before storage
+    Enriches data with GeoIP, threat intelligence, or custom metadata
+    Outputs clean data to files, databases, SIEM tools, or monitoring dashboards
