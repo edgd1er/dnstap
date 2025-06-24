@@ -7,6 +7,9 @@ name: Build and push Docker image
 on:
   push:
     branches: [ "main" ]
+    paths-ignore:
+      - .github
+      - .gitignore
     # Publish semver tags as releases.
     tags: [ 'v*.*.*' ]
   pull_request:
@@ -22,7 +25,6 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
