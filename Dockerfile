@@ -22,7 +22,7 @@ USER auser
 ENV TZ="Europe/Paris" \
     TAPADDRESS="0.0.0.0" \
     TAPPORT="6000" \
-    TAPFILE="/dev/stdout"
+    TAPFILE="/dev/stdout" \
     TAPFORMAT="q"
 
 ENTRYPOINT ["/sbin/tini", "--"]
